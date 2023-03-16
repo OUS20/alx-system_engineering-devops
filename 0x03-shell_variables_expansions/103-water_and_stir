@@ -1,2 +1,5 @@
 #!/bin/bash
+ater_base10=$(echo $WATER | tr 'water' '01234' | bc)
+stir_base10=$(echo $STIR | tr 'stir' '01234' | bc)
+result=$(($water_base10 + $stir_base10))
 echo "obase=bestchol; $result" | bc | tr '01234' 'bestchol'
