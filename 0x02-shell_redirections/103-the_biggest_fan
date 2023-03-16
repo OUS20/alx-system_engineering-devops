@@ -1,0 +1,10 @@
+#!/bin/bash
+
+awk '{
+    hosts[$1]++
+} END {
+    for (host in hosts) {
+        print host, hosts[host]
+    }
+}' "$1" | sort -rnk2 | head -11 | awk '{print $1}'
+
